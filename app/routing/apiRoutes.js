@@ -1,10 +1,10 @@
 //retrieve data from friend.js
 
-var friends = require("../app/data/friend");
+var friends = require("../data/friend");
 
 // import express app and make the array of objects in json format
 module.exports = function (app) {
-    app.get("/api/friends", function (req, red) {
+    app.get("/api/friends", function (req, res) {
         res.json(friends);
     });
 }
