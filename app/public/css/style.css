@@ -1,0 +1,25 @@
+.container {
+    background-color: white;
+  }
+.homej {
+    height: 100vh;
+}
+.titlehead{
+    margin-top: 25vh;
+}
+.jumbotron {
+    background-color: rgb(6, 143, 6);
+    color: white;
+    border-bottom-right-radius: .5emp;
+    border-bottom-left-radius: .5em;
+}
+.homeb {
+    background-color: rgb(6, 143, 6);
+}
+.links {
+    margin-top: 10vh;
+    font-size: 19px;
+}
+.alink{
+    color: white;
+}
