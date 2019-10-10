@@ -1,11 +1,17 @@
+var express = require("express");
+var bodyParser = require("body-parser");
 var path = require("path");
 
-module.exports = function(app) {
-  app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/survey.html"));
-  });
+var app = express();
+var port = process.env.PORT || 3000;
 
-  app.use(function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/home.html"));
-  });
-};
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static("app/public"));
+
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
+
+app.listen(port, () => console.log("Listening on port:", port));
