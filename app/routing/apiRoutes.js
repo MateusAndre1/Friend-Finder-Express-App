@@ -39,10 +39,19 @@ module.exports = function (app) {
 
         console.log(`Sum of match score: ${total}\nBest Match diff ${bestMatch.friendDiff}\n`);
 
+
+
         for (let i = 0; i < friends.length; i++) {
-            bestMatch.name = friends[i].name;
-            bestMatch.photo = friends[i].photo;
-            bestMatch.friendDiff = totalDiff;
+
+            totalDiff = 0;
+            let friendScore = friends[i].scores.reduce((a, b) => a + b, 0)
+            totalDiff += Math.abs(total - friendScore);
+
+            if (totalDiff <= bestMatch.friendDiff) {
+                bestMatch.name = friends[i].name;
+                bestMatch.photo = friends[i].photo;
+                bestMatch.friendDiff = totalDiff;
+            }
         }
 
         console.log(`Total Difference: ${totalDiff}`);
