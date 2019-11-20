@@ -2,6 +2,8 @@
 
 ### Looking for a friend? Take a test!
 
+Take the test! [Friend Finder](https://morning-gorge-95633.herokuapp.com/)
+
 ![home](app/public/assets/images/homepage.png)
  
 ## Technologies Used
