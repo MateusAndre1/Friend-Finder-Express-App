@@ -5,7 +5,6 @@
 ![home](app/public/assets/images/homepage.png)
  
 ## Technologies Used
-
 * JavaScript
 * jQuery
 * node.js
